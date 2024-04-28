@@ -1,0 +1,133 @@
+Preface
+There are two kinds of cryptography in this world: cryptography that will stop
+your kid sister from reading your files, and cryptography that will stop major
+governments from reading your files. This book is about the latter.
+If I take a letter, lock it in a safe, hide the safe somewhere in New York, then
+tell you to read the letter, that’s not security. That’s obscurity. On the other
+hand, if I take a letter and lock it in a safe, and then give you the safe along
+with the design specifications of the safe and a hundred identical safes with
+their combinations so that you and the world’s best safecrackers can study the
+locking mechanism—and you still can’t open the safe and read the
+letter—that’s security.
+For many years, this sort of cryptography was the exclusive domain of the
+military. The United States’ National Security Agency (NSA), and its
+counterparts in the former Soviet Union, England, France, Israel, and
+elsewhere, have spent billions of dollars in the very serious game of securing
+their own communications while trying to break everyone else’s. Private
+individuals, with far less expertise and budget, have been powerless to protect
+their own privacy against these governments.
+During the last 20 years, public academic research in cryptography has
+exploded. While classical cryptography has been long used by ordinary
+citizens, computer cryptography was the exclusive domain of the world’s
+militaries since World War II. Today, state–of–the–art computer cryptography
+is practiced outside the secured walls of the military agencies. The layperson
+can now employ security practices that can protect against the most powerful
+of adversaries—security that may protect against military agencies for years to
+come.
+Do average people really need this kind of security? Yes. They may be
+planning a political campaign, discussing taxes, or having an illicit affair. They
+may be designing a new product, discussing a marketing strategy, or planning
+a hostile business takeover. Or they may be living in a country that does not
+respect the rights of privacy of its citizens. They may be doing something that
+they feel shouldn’t be illegal, but is. For whatever reason, the data and
+communications are personal, private, and no one else’s business.
+This book is being published in a tumultuous time. In 1994, the Clinton
+administration approved the Escrowed Encryption Standard (including the
+Clipper chip and Fortezza card) and signed the Digital Telephony bill into law.
+Both of these initiatives try to ensure the government’s ability to conduct
+electronic surveillance.
+Some dangerously Orwellian assumptions are at work here: that the
+government has the right to listen to private communications, and that there is
+something wrong with a private citizen trying to keep a secret from the
+government. Law enforcement has always been able to conduct
+court–authorized surveillance if possible, but this is the first time that the
+people have been forced to take active measures to make themselves available
+for surveillance. These initiatives are not simply government proposals in
+some obscure area; they are preemptive and unilateral attempts to usurp
+powers that previously belonged to the people.
+Clipper and Digital Telephony do not protect privacy; they force individuals to
+unconditionally trust that the government will respect their privacy. The same
+law enforcement authorities who illegally tapped Martin Luther King Jr.’s
+phones can easily tap a phone protected with Clipper. In the recent past, local
+police authorities have either been charged criminally or sued civilly in
+numerous jurisdictions—Maryland, Connecticut, Vermont, Georgia, Missouri,
+and Nevada—for conducting illegal wiretaps. It’s a poor idea to deploy a
+technology that could some day facilitate a police state.
+The lesson here is that it is insufficient to protect ourselves with laws; we need
+to protect ourselves with mathematics. Encryption is too important to be left
+solely to governments.
+This book gives you the tools you need to protect your own privacy;
+cryptography products may be declared illegal, but the information will never
+be.
+How to Read This Book
+I wrote Applied Cryptography to be both a lively introduction to the field of
+cryptography and a comprehensive reference. I have tried to keep the text
+readable without sacrificing accuracy. This book is not intended to be a
+mathematical text. Although I have not deliberately given any false
+information, I do play fast and loose with theory. For those interested in
+formalism, there are copious references to the academic literature.
+Chapter 1 introduces cryptography, defines many terms, and briefly discusses
+precomputer cryptography.
+Chapters 2 through 6 (Part I) describe cryptographic protocols: what people
+can do with cryptography. The protocols range from the simple (sending
+encrypted messages from one person to another) to the complex (flipping a
+coin over the telephone) to the esoteric (secure and anonymous digital money
+exchange). Some of these protocols are obvious; others are almost amazing.
+Cryptography can solve a lot of problems that most people never realized it
+could.
+Chapters 7 through 10 (Part II) discuss cryptographic techniques. All four
+chapters in this section are important for even the most basic uses of
+cryptography. Chapters 7 and 8 are about keys: how long a key should be in
+order to be secure, how to generate keys, how to store keys, how to dispose of
+keys, and so on. Key management is the hardest part of cryptography and often
+the Achilles’ heel of an otherwise secure system. Chapter 9 discusses different
+ways of using cryptographic algorithms, and Chapter 10 gives the odds and
+ends of algorithms: how to choose, implement, and use algorithms.
+Chapters 11 through 23 (Part III) list algorithms. Chapter 11 provides the
+mathematical background. This chapter is only required if you are interested in
+public–key algorithms. If you just want to implement DES (or something
+similar), you can skip ahead. Chapter 12 discusses DES: the algorithm, its
+history, its security, and some variants. Chapters 13, 14, and 15 discuss other
+block algorithms; if you want something more secure than DES, skip to the
+section on IDEA and triple–DES. If you want to read about a bunch of
+algorithms, some of which may be more secure than DES, read the whole
+chapter. Chapters 16 and 17 discuss stream algorithms. Chapter 18 focuses on
+one–way hash functions; MD5 and SHA are the most common, although I
+discuss many more. Chapter 19 discusses public–key encryption algorithms,
+Chapter 20 discusses public–key digital signature algorithms, Chapter 21
+discusses public–key identification algorithms, and Chapter 22 discusses
+public–key key exchange algorithms. The important algorithms are RSA,
+DSA, Fiat–Shamir, and Diffie–Hellman, respectively. Chapter 23 has more
+esoteric public–key algorithms and protocols; the math in this chapter is quite
+complicated, so wear your seat belt.
+Chapters 24 and 25 (Part IV) turn to the real world of cryptography. Chapter
+24 discusses some of the current implementations of these algorithms and
+protocols, while Chapter 25 touches on some of the political issues
+surrounding cryptography. These chapters are by no means intended to be
+comprehensive.
+Also included are source code listings for 10 algorithms discussed in Part III. I
+was unable to include all the code I wanted to due to space limitations, and
+cryptographic source code cannot otherwise be exported. (Amazingly enough,
+the State Department allowed export of the first edition of this book with
+source code, but denied export for a computer disk with the exact same source
+code on it. Go figure.) An associated source code disk set includes much more
+source code than I could fit in this book; it is probably the largest collection of
+cryptographic source code outside a military institution. I can only send source
+code disks to U.S. and Canadian citizens living in the U.S. and Canada, but
+hopefully that will change someday. If you are interested in implementing or
+playing with the cryptographic algorithms in this book, get the disk. See the
+last page of the book for details.
+One criticism of this book is that its encyclopedic nature takes away from its
+readability. This is true, but I wanted to provide a single reference for those
+who might come across an algorithm in the academic literature or in a product.
+For those who are more interested in a tutorial, I apologize. A lot is being done
+in the field; this is the first time so much of it has been gathered between two
+covers. Even so, space considerations forced me to leave many things out. I
+covered topics that I felt were important, practical, or interesting. If I couldn’t
+cover a topic in depth, I gave references to articles and papers that did.
+I have done my best to hunt down and eradicate all errors in this book, but
+many have assured me that it is an impossible task. Certainly, the second
+edition has far fewer errors than the first. An errata listing is available from me
+and will be periodically posted to the Usenet newsgroup sci.crypt. If any
+reader finds an error, please let me know. I’ll send the first person to find each
+error in the book a free copy of the source code disk.
